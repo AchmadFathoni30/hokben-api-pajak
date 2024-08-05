@@ -41,6 +41,11 @@ class PajakController extends Controller
         ->whereDate('trans_date', $trans_date)
         ->get();
 
-        return response()->json($query);
+        $mappedData = $query->map(function ($item) {
+            $item->status_description = $item->valid_status == 1 ? 'Sales Complete' : 'Sales Void';
+            return $item;
+        });
+
+        return response()->json($mappedData);
     }
 }

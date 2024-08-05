@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/SalesComplete', [PajakController::class, 'getDataSalesComplete']);
+Route::get('/pajak', [PajakController::class, 'getDataSalesComplete']);
