@@ -36,7 +36,8 @@ class PajakController extends Controller
             'status',
             'branch_id',
             'valid_status',
-            'tacharge'])
+            'tacharge',
+            'nmhhb'])
         ->where('branch_id', $branch_id)
         ->whereDate('trans_date', $trans_date)
         ->get();
